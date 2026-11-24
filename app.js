@@ -127,7 +127,7 @@
     track.classList.add('is-gliding');
     const started = performance.now();
     function turn(now) {
-      const progress = Math.min(1, (now - started) / 6000);
+      const progress = Math.min(1, (now - started) / 5000);
       const eased = (1 - Math.cos(Math.PI * progress)) / 2;
       orbitPosition = origin + direction * eased;
       const reveal = Math.min(1, progress / .2, (1 - progress) / .2);
@@ -147,7 +147,7 @@
     const headingBounds = $('retratos').querySelector('.section-heading').getBoundingClientRect();
     const inView = bounds => bounds.top < window.innerHeight * .95 && bounds.bottom > window.innerHeight * .05;
     if ((!inView(photoBounds) && !inView(headingBounds)) || photos.length < 2 || reducedMotion.matches || document.hidden || !document.body.classList.contains('opened')) return;
-    carouselTimer = setInterval(() => movePhoto(1), 13000);
+    carouselTimer = setInterval(() => movePhoto(1), 11500);
   }
   $('fotoAnterior').addEventListener('click', () => movePhoto(-1));
   $('fotoSiguiente').addEventListener('click', () => movePhoto(1));

@@ -1052,3 +1052,6 @@ body{overflow-x:clip}
 .hero .hero__frame {
   margin-top: calc(28cqw + 10px);
 }
+#tituloPrincipal:focus {
+  outline: none;
+}

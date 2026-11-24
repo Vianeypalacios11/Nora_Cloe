@@ -127,7 +127,7 @@
     track.classList.add('is-gliding');
     const started = performance.now();
     function turn(now) {
-      const progress = Math.min(1, (now - started) / 8000);
+      const progress = Math.min(1, (now - started) / 6000);
       const eased = (1 - Math.cos(Math.PI * progress)) / 2;
       orbitPosition = origin + direction * eased;
       const reveal = Math.min(1, progress / .2, (1 - progress) / .2);

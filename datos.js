@@ -24,7 +24,7 @@ window.DATOS_INVITACION = {
     'Señor, hoy recibimos tu luz y tu bendición.',
     'Guía nuestros pasos con tu amor.'
   ],
-  padres: ['Gabriela Yasmin Prieto Ávalos', 'Aaron Solís Robledo'],
+  padres: ['Gabriela Prieto Ávalos', 'Aaron Solís Robledo'],
   ceremonia: {
     titulo: 'Misa',
     fecha: '2026-12-20',

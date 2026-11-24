@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es" class="invitation-loading">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#fffaf8" />
+  <meta name="description" content="Celebra con nosotros los 3 años de Nora y el bautizo de Chloe." />
+  <title>3 años de Nora y bautizo de Chloe | Invitación</title>
+  <style>
+    html.invitation-loading body > :not(#invitationLoader):not(noscript) { display: none !important; }
+    #contenido[hidden], #contenido[aria-hidden="true"] { display: none !important; }
+    #invitationLoader { position: fixed; inset: 0; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; box-sizing: border-box; background: #fff8f8; color: #914b68; text-align: center; font: 600 16px/1.6 Georgia, serif; transition: opacity .6s ease; }
+    #invitationLoader[hidden] { display: none; }
+    #invitationLoader.loader--ready { opacity: 0; pointer-events: none; }
+    .loader-ring { width: 34px; height: 34px; border: 2px solid #ecd5de; border-top-color: #a96583; border-radius: 50%; animation: loader-spin 1.3s linear infinite; margin-bottom: 20px; }
+    #loaderMessage { max-width: 320px; }
+    #loaderRetry { margin-top: 16px; padding: 12px 22px; border: 1px solid #a96583; border-radius: 24px; background: #fff; color: #914b68; font: bold 15px Georgia, serif; cursor: pointer; }
+    @keyframes loader-spin { to { transform: rotate(360deg); } }
+    @media(prefers-reduced-motion:reduce) { .loader-ring { animation: none; } #invitationLoader { transition: none; } }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<link rel="stylesheet" href="site.css" media="print" onload="this.media='all'" />
+
+  <script src="datos.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="confirmacion.js" defer></script>
+  <script src="carga.js" defer></script>
+</head>
+<body>
+  <div id="invitationLoader" role="status" aria-live="polite"><span class="loader-ring" aria-hidden="true"></span><p id="loaderMessage">Cargando invitación…</p><button id="loaderRetry" type="button" hidden>Volver a intentar</button></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- PORTADA: SOBRE ANIMADO -->
+  <div class="intro" id="intro" role="dialog" aria-label="Abrir invitación" aria-modal="true">
+    <div class="intro-glow intro-glow--left" aria-hidden="true"></div>
+    <div class="intro-glow intro-glow--right" aria-hidden="true"></div>
+    <span class="sparkle sparkle--one" aria-hidden="true">✧</span>
+    <span class="sparkle sparkle--two" aria-hidden="true">✧</span>
+    <span class="sparkle sparkle--three" aria-hidden="true">✳</span>
+    <button class="envelope-trigger" id="abrirSobre" type="button" aria-label="Abrir el sobre y ver la invitación">
+      <span class="envelope" aria-hidden="true">
+        <span class="envelope__back"></span>
+        <span class="envelope__open-peak" aria-hidden="true"></span>
+        <span class="envelope__letter">
+          <span class="letter__small">TE INVITAMOS A CELEBRAR</span>
+          <img class="letter__carousel" src="assets/carrusel-vintage.png" alt="" />
+          <span class="letter__name" id="nombreSobre">Nora y Chloe</span>
+          <span class="letter__opening-date">20 · 12 · 2026</span>
+        </span>
+        <span class="envelope__flap"></span>
+        <span class="envelope__front"></span>
+        <span class="envelope__seal"><img class="seal__butterfly" src="assets/sello-carrusel-oro.png" alt="" /></span>
+      </span>
+    </button>
+    <p class="intro__hint" id="abrirInstruccion">Toca para abrirlo</p>
+    <button class="intro__skip" id="saltarIntro" type="button">Ver invitación directo</button>
+    <div class="intro__bottom-line" aria-hidden="true"></div>
+  </div>
+
+  <main id="contenido" class="page" aria-hidden="true" hidden>
+
+    <!-- PORTADA DE LAS CELEBRACIONES -->
+    <section class="hero section" id="portada" aria-labelledby="tituloPrincipal">
+      
+      <div class="hero__stationery">
+      <div class="hero__open-envelope" aria-hidden="true">
+        <span class="hero__envelope-flap"></span>
+        <span class="hero__envelope-pocket"></span>
+      </div>
+      <div class="hero__frame">
+        <img class="hero__curved-frame" src="assets/marco-esquinas-curvas.svg" alt="" aria-hidden="true" />
+        <img class="hero__paper-seal" src="assets/sello-carrusel-oro.png" alt="" aria-hidden="true" />
+        <img class="hero__paper-cross" src="assets/cruz-fina.svg" alt="" aria-hidden="true" />
+        <p class="hero__intro" id="dedicatoria"></p>
+        <h1 id="tituloPrincipal">
+          <span class="hero__celebration">
+            <span class="hero__script" id="tituloCumpleanos"></span>
+            <span class="hero__name" id="nombreCumpleanos"></span>
+          </span>
+          <span class="hero__celebration">
+            <span class="hero__script">Mi bautizo</span>
+            <span class="hero__name" id="nombreBautizo"></span>
+          </span>
+        </h1>
+        <p class="hero__paper-location">Loreto, Zacatecas</p>
+        <p class="hero__paper-date">20 de diciembre de 2026</p>
+      </div>
+      </div>
+      <div class="scroll-cue">Desliza para descubrir <span aria-hidden="true">↓</span></div>
+    </section>
+
+    <section class="memories section" id="retratos" aria-label="Recuerdos de Nora y Chloe" hidden>
+      <h2 class="section-heading">Nuestros recuerdos</h2>
+      <div class="memories__stage">
+        <div class="memories__track" id="fotosCarrusel" tabindex="0" aria-label="Fotos, desliza para ver más"><span class="gallery-carousel-pole" aria-hidden="true"></span></div>
+        <span class="gallery-carousel-roof" aria-hidden="true"></span>
+        <span class="gallery-carousel-base" aria-hidden="true"></span>
+        <span class="gallery-lamps gallery-lamps--left" aria-hidden="true"><i style="--lamp-delay:0s"></i><i style="--lamp-delay:0.15s"></i><i style="--lamp-delay:0.3s"></i><i style="--lamp-delay:0.44999999999999996s"></i><i style="--lamp-delay:0.6s"></i></span>
+<span class="gallery-lamps gallery-lamps--right" aria-hidden="true"><i style="--lamp-delay:0s"></i><i style="--lamp-delay:0.15s"></i><i style="--lamp-delay:0.3s"></i><i style="--lamp-delay:0.44999999999999996s"></i><i style="--lamp-delay:0.6s"></i></span>
+      </div>
+      <div class="memories__controls">
+        <button id="fotoAnterior" type="button" aria-label="Foto anterior">‹</button>
+        <p id="fotoPosicion" aria-live="polite"></p>
+        <button id="fotoSiguiente" type="button" aria-label="Foto siguiente">›</button>
+      </div>
+    </section>
+
+    <!-- MENSAJE DE BAUTIZO -->
+    <section class="blessing section" id="bendicion" aria-label="Bendición">
+      <div class="blessing__message">
+        <img class="blessing__dove" src="assets/paloma-dorada.svg" width="100" height="90" alt="Paloma dorada, símbolo de paz" />
+        <div class="blessing__text" id="oracion"></div>
+      </div>
+      <div class="tiny-cross" aria-hidden="true"><img src="assets/cruz-fina.svg" width="30" height="47" alt="" /></div>
+    </section>
+
+    <!-- FAMILIA -->
+    <section class="family section" id="familia" aria-label="Papás y padrinos">
+      <div class="family__card">
+        <img class="section-paper-frame" src="assets/marco-esquinas-curvas.svg" alt="" aria-hidden="true" />
+        <img class="family__cross" src="assets/cruz-fina.svg" alt="" />
+        <div class="family__inner">
+          <p class="family__prelude">Con el cariño de nuestra familia</p>
+          <div class="family__group">
+            <p class="eyebrow">Nuestros papás</p>
+            <p class="family__names" id="padres"></p>
+          </div>
+          <div class="family__group">
+            <p class="eyebrow" id="tituloPadrinosCumpleanos"></p>
+            <p class="family__names" id="padrinosCumpleanos"></p>
+          </div>
+          <div class="family__group">
+            <p class="eyebrow" id="tituloPadrinosBautizo"></p>
+            <p class="family__names" id="padrinosBautizo"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reference-schedule section" id="itinerario" aria-label="Misa y recepción">
+      <div class="paired-date-schedule paired-date-schedule--combined">
+        <div class="reference-schedule__composition">
+          <article class="reference-schedule__card reference-event">
+            <div class="combined-event">
+              <h2 id="ceremoniaTitulo">Misa</h2>
+              <p class="reference-event__time" id="ceremoniaHora"></p>
+              <p class="reference-event__place" id="ceremoniaLugar"></p>
+              <p id="ceremoniaDireccion" hidden></p>
+              <div class="event-actions"><button class="reference-map" id="mapaCeremonia" type="button">Ver mapa</button></div>
+            </div>
+            <div class="combined-event">
+              <h2 id="recepcionTitulo">Recepción</h2>
+              <p class="reference-event__time" id="recepcionHora"></p>
+              <p class="reference-event__place" id="recepcionLugar"></p>
+              <p id="recepcionDireccion" hidden></p>
+              <div class="event-actions"><button class="reference-map" id="mapaRecepcion" type="button">Ver mapa</button></div>
+            </div>
+          </article>
+          <div class="reference-schedule__keepsake">
+            <img class="reference-schedule__art" src="assets/pony-misa-champan.png" alt="Caballito de carrusel con la fecha de nuestra celebración" />
+            <img class="reference-schedule__art reference-schedule__art--plaque" src="assets/pony-misa-champan.png" alt="" aria-hidden="true" />
+            <time class="reference-dates" datetime="2026-12-20">
+              <span class="reference-dates__label">Domingo</span>
+              <span class="reference-dates__month">Diciembre</span>
+              <strong>20</strong>
+              <span class="reference-dates__year">2026</span>
+            </time>
+          </div>
+        </div>
+      </div>
+      <div class="event-calendar" aria-label="Calendario de nuestra celebración">
+        <table>
+          <caption>Diciembre <span>2026</span></caption>
+          <thead><tr><th scope="col"><abbr title="Domingo">D</abbr></th><th scope="col"><abbr title="Lunes">L</abbr></th><th scope="col"><abbr title="Martes">M</abbr></th><th scope="col"><abbr title="Miércoles">M</abbr></th><th scope="col"><abbr title="Jueves">J</abbr></th><th scope="col"><abbr title="Viernes">V</abbr></th><th scope="col"><abbr title="Sábado">S</abbr></th></tr></thead>
+          <tbody><tr><td></td><td></td><td><span>1</span></td><td><span>2</span></td><td><span>3</span></td><td><span>4</span></td><td><span>5</span></td></tr><tr><td><span>6</span></td><td><span>7</span></td><td><span>8</span></td><td><span>9</span></td><td><span>10</span></td><td><span>11</span></td><td><span>12</span></td></tr><tr><td><span>13</span></td><td><span>14</span></td><td><span>15</span></td><td><span>16</span></td><td><span>17</span></td><td><span>18</span></td><td><span>19</span></td></tr><tr><td><time class="event-calendar__selected" datetime="2026-12-20" aria-label="Domingo 20 de diciembre de 2026, misa y recepción">20</time></td><td><span>21</span></td><td><span>22</span></td><td><span>23</span></td><td><span>24</span></td><td><span>25</span></td><td><span>26</span></td></tr><tr><td><span>27</span></td><td><span>28</span></td><td><span>29</span></td><td><span>30</span></td><td><span>31</span></td><td></td><td></td></tr></tbody>
+        </table>
+        
+      </div>
+      <div class="reference-countdown" id="cuentaRegresiva" hidden>
+        <p>Faltan</p>
+        <div class="reference-countdown__units">
+          <div><strong id="dias">00</strong><small>DÍAS</small></div>
+          <img class="countdown-bow" src="assets/mono-acuarela.png" alt="" aria-hidden="true" />
+          <div><strong id="horas">00</strong><small>HORAS</small></div>
+          <img class="countdown-bow" src="assets/mono-acuarela.png" alt="" aria-hidden="true" />
+          <div><strong id="minutos">00</strong><small>MINUTOS</small></div>
+          <img class="countdown-bow" src="assets/mono-acuarela.png" alt="" aria-hidden="true" />
+          <div><strong id="segundos">00</strong><small>SEGUNDOS</small></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="carousel-divider" aria-hidden="true"></div>
+    <section class="rsvp section" id="confirmacion" aria-labelledby="confirmacionTitulo">
+      <div class="rsvp__card">
+        <img class="section-paper-frame" src="assets/marco-esquinas-curvas.svg" alt="" aria-hidden="true" />
+        <h2 id="confirmacionTitulo">Confirma tu asistencia</h2>
+        <p id="confirmacionEstado" role="status" aria-live="polite"></p>
+        <button id="confirmacionReintentar" class="rsvp__button" type="button" hidden>Intentar nuevamente</button>
+        <div id="confirmacionInvitado" hidden>
+          <p class="rsvp__guest" id="confirmacionNombre"></p>
+          <form id="confirmacionFormulario">
+            <label for="confirmacionAsistencia">¿Nos acompañarás?</label>
+            <select id="confirmacionAsistencia" required>
+              <option value="" selected>Elige tu respuesta</option>
+              <option value="SI">Sí asistiré</option>
+              <option value="NO">No asistiré</option>
+            </select>
+            <label for="confirmacionMensaje">Mensaje para nuestra familia (opcional)</label>
+            <textarea id="confirmacionMensaje" rows="3" maxlength="1500"></textarea>
+            <button class="rsvp__button" id="confirmacionEnviar" type="submit">Confirmar asistencia</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="footer"><span class="footer__greeting">Con cariño,</span><br /><span class="footer__family">Familia Solís Prieto</span></footer>
+    <div class="designer-contact">
+      <img src="assets/by-jp.jpeg" width="1179" height="591" alt="by JP" loading="lazy" />
+      <a href="https://wa.me/524962297914?text=Hola%2C%20quisiera%20informes%20sobre%20invitaciones%20digitales." target="_blank" rel="noopener noreferrer">Informes por WhatsApp</a>
+    </div>
+  </main>
+
+  <button class="music-button" id="musicaBoton" type="button" aria-label="Activar música" aria-pressed="false" hidden>🔇</button>
+  <audio id="musicaAudio" preload="none" loop></audio>
+  <noscript><style>#invitationLoader{display:none!important}</style><p class="no-js">Activa JavaScript para abrir esta invitación interactiva.</p></noscript>
+</body>
+</html>

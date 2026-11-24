@@ -147,7 +147,10 @@
     const headingBounds = $('retratos').querySelector('.section-heading').getBoundingClientRect();
     const inView = bounds => bounds.top < window.innerHeight * .95 && bounds.bottom > window.innerHeight * .05;
     if ((!inView(photoBounds) && !inView(headingBounds)) || photos.length < 2 || reducedMotion.matches || document.hidden || !document.body.classList.contains('opened')) return;
-    carouselTimer = setInterval(() => movePhoto(1), 11500);
+    carouselTimer = setTimeout(() => {
+  movePhoto(1);
+  carouselTimer = setInterval(() => movePhoto(1), 11500);
+  }, 3000);
   }
   $('fotoAnterior').addEventListener('click', () => movePhoto(-1));
   $('fotoSiguiente').addEventListener('click', () => movePhoto(1));

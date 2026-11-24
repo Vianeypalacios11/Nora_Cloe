@@ -1049,3 +1049,6 @@ body{overflow-x:clip}
   text-align: center;
   text-align-last: center;
 }
+.hero .hero__frame {
+  margin-top: calc(28cqw + 10px);
+}
